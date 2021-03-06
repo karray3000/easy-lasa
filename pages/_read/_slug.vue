@@ -98,7 +98,7 @@
         </div>
       </div>
     </div>
-    <b-modal v-model="firstSentence" has-modal-card scroll="keep">
+    <b-modal v-model="showModal" has-modal-card scroll="keep" @close="showModal = false">
       <div
         class="modal-card"
         v-bind:style="{
@@ -123,6 +123,7 @@
 export default {
   data() {
     return {
+      showModal: false,
       firstSentence: undefined,
       secondSentence: undefined
     }

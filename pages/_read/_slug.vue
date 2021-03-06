@@ -33,8 +33,8 @@
 }
 
 .divider {
-  margin-top: .5rem;
-  height: .5rem;
+  margin-top: 0.5rem;
+  height: 0.5rem;
   position: relative;
   width: 100%;
   background: radial-gradient(
@@ -50,7 +50,7 @@
   top: 0px;
   right: 0;
   left: 0;
-  height: .5rem;
+  height: 0.5rem;
   background: linear-gradient(
     to right,
     transparent,
@@ -99,7 +99,14 @@
       </div>
     </div>
     <b-modal v-model="firstSentence" has-modal-card scroll="keep">
-      <div class="modal-card" v-bind:style="{ backgroundColor: 'white', padding: '1rem', borderRadius: '1rem'}">
+      <div
+        class="modal-card"
+        v-bind:style="{
+          backgroundColor: 'white',
+          padding: '1rem',
+          borderRadius: '1rem',
+        }"
+      >
         <p>
           {{ firstSentence }}
         </p>
@@ -119,7 +126,7 @@ export default {
       firstSentence: undefined,
     }
   },
-  async asyncData({ params }) {
+  async asyncData({ params }: { params: {[key: string]:string} }) {
     const slug = params.slug
 
     const MY_JSON = await import(`../../static/${slug}.json`)

@@ -16,7 +16,7 @@
   line-height: 1.3rem;
   text-align: justify;
   text-justify: inter-word;
-  padding-bottom: 0.8rem;
+  padding-bottom: 0.7rem;
 }
 
 .sentence {
@@ -124,9 +124,10 @@ export default {
   data() {
     return {
       firstSentence: undefined,
+      secondSentence: undefined
     }
   },
-  async asyncData({ params }: { params: {[key: string]:string} }) {
+  async asyncData({ params }: { params: { [key: string]: string } }) {
     const slug = params.slug
 
     const MY_JSON = await import(`../../static/${slug}.json`)

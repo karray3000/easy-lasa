@@ -84,7 +84,7 @@
             v-for="(sentencePair, s_index) in paragraph"
             v-bind:key="s_index"
           >
-            <span v-if="index > 0"> </span>
+            <span v-if="s_index > 0"> </span>
             <span
               class="sentence"
               @click="
